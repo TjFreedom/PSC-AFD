@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply Now | PSC &amp; AFD Provider Licensing Network</title>
+  <meta name="description" content="Apply to join the PSC and AFD provider licensing network. Schedule your discovery call with Dr. Ryan Robinson and take the first step toward airway-focused practice." />
+  <link rel="canonical" href="https://pscprovidernetwork.com/apply.html" />
+  <meta property="og:title"       content="Apply Now | PSC &amp; AFD Provider Licensing" />
+  <meta property="og:description" content="Ready to license the PSC or AFD brand? Submit your application and we'll reach out to schedule a discovery call with Dr. Robinson." />
+  <meta property="og:type"        content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://pscprovidernetwork.com/"},
+      {"@type":"ListItem","position":2,"name":"Apply Now","item":"https://pscprovidernetwork.com/apply.html"}
+    ]
+  }
+  </script>
+  <style>
+    /* ── Apply Page Specific ── */
+    .apply-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    /* Left panel */
+    .apply-panel {
+      background: var(--green-deeper);
+      padding: 80px 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .apply-panel-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .apply-panel-brand .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .apply-panel-brand .brand-sub {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .apply-panel-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+    }
+
+    .apply-panel-heading em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .apply-panel-body {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .apply-tier {
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,0.04);
+      transition: border-color 0.25s, background 0.25s;
+    }
+
+    .apply-tier:hover {
+      border-color: var(--gold);
+      background: rgba(201,169,110,0.06);
+    }
+
+    .apply-tier-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .apply-tier h4 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .apply-tier-price {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 12px;
+    }
+
+    .apply-tier-includes {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .apply-tier-includes li {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .apply-tier-includes li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .apply-panel-contact {
+      margin-top: auto;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 28px;
+    }
+
+    .apply-panel-contact p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 8px;
+    }
+
+    .apply-panel-contact strong {
+      display: block;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    /* Right panel — form */
+    .apply-form-panel {
+      background: var(--cream);
+      padding: 80px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .apply-form-header {
+      margin-bottom: 40px;
+    }
+
+    .apply-form-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 2.5vw, 2.75rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .apply-form-header p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      max-width: 480px;
+    }
+
+    /* Form styles */
+    .apply-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-field label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .form-field label .req {
+      color: var(--green);
+      margin-left: 2px;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      background: #fff;
+      border: 1.5px solid #d8d4cc;
+      border-radius: 10px;
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(12,117,63,0.1);
+    }
+
+    .form-field input.error,
+    .form-field select.error,
+    .form-field textarea.error {
+      border-color: #c0392b;
+      box-shadow: 0 0 0 3px rgba(192,57,43,0.08);
+    }
+
+    .field-error {
+      font-size: 0.75rem;
+      color: #c0392b;
+      display: none;
+    }
+
+    .field-error.visible {
+      display: block;
+    }
+
+    .form-field textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-field select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230c753f' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+
+    /* Checkbox group */
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      accent-color: var(--green);
+      border-radius: 4px;
+      margin-top: 1px;
+      cursor: pointer;
+    }
+
+    .checkbox-item span {
+      font-size: 0.875rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    .checkbox-item span strong {
+      color: var(--text-dark);
+      display: block;
+      font-size: 0.875rem;
+    }
+
+    /* Consent row */
+    .consent-row {
+      background: #fff;
+      border: 1.5px solid #d8d4cc;
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+
+    .consent-row .checkbox-item span {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+    }
+
+    /* Submit */
+    .form-submit-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 8px;
+    }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--green);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      width: 100%;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-submit:hover {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(12,117,63,0.25);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--text-mid);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* Success state */
+    .form-success {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 20px;
+      padding: 60px 0;
+    }
+
+    .form-success.visible {
+      display: flex;
+    }
+
+    .success-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    .form-success h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .form-success p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      max-width: 380px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .apply-layout {
+        grid-template-columns: 1fr;
+        min-height: unset;
+      }
+
+      .apply-panel {
+        position: static;
+        height: auto;
+        padding: 56px 24px;
+      }
+
+      .apply-panel-contact {
+        margin-top: 0;
+      }
+
+      .apply-form-panel {
+        padding: 56px 24px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body data-page="apply">
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-text">Pain &amp; Sleep · AFD</span>
+        <span class="nav-logo-accent">Provider Licensing Network</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html"      class="nav-link">Home</a></li>
+        <li><a href="brands.html"     class="nav-link">Our Brands</a></li>
+        <li><a href="pricing.html"    class="nav-link">Pricing</a></li>
+        <li><a href="leadership.html" class="nav-link">Leadership</a></li>
+        <li><a href="process.html"    class="nav-link">How It Works</a></li>
+        <li><a href="apply.html"      class="nav-cta active">Apply Now</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Apply Layout -->
+    <div class="apply-layout">
+
+      <!-- Left Panel -->
+      <aside class="apply-panel" aria-label="Application summary">
+
+        <div class="apply-panel-brand">
+          <div class="brand-name">Pain &amp; Sleep · AFD</div>
+          <div class="brand-sub">Provider Licensing Network</div>
+        </div>
+
+        <h2 class="apply-panel-heading">
+          Your first step toward <em>root-cause practice.</em>
+        </h2>
+
+        <div class="apply-panel-body">
+
+          <div class="apply-tier">
+            <div class="apply-tier-label">Tier 1</div>
+            <h4>Licensure Agreement</h4>
+            <p class="apply-tier-price">$25,000 initiation + 3% monthly royalty</p>
+            <ul class="apply-tier-includes">
+              <li>Brand licensing rights</li>
+              <li>Clinical protocols &amp; documentation</li>
+              <li>On-site training in Newark, DE</li>
+              <li>Monthly leadership coaching calls</li>
+              <li>Marketing materials &amp; templates</li>
+              <li>Quarterly CE &amp; case review</li>
+            </ul>
+          </div>
+
+          <div class="apply-tier">
+            <div class="apply-tier-label">Tier 2 — Full Partnership</div>
+            <h4>Licensure + MSA</h4>
+            <p class="apply-tier-price">Licensure + 5% monthly (MSA)</p>
+            <ul class="apply-tier-includes">
+              <li>Everything in Tier 1</li>
+              <li>Full operational management support</li>
+              <li>Billing &amp; revenue cycle consulting</li>
+              <li>Staff recruitment &amp; training frameworks</li>
+              <li>Technology stack &amp; EHR integration</li>
+              <li>Referral network access</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="apply-panel-contact">
+          <p>Questions before applying?</p>
+          <strong>(302) 239-1757</strong>
+          <strong>licensing@painandsleepcenter.com</strong>
+        </div>
+
+      </aside>
+
+      <!-- Right Panel — Form -->
+      <section class="apply-form-panel" aria-label="Application form">
+
+        <div class="apply-form-header">
+          <nav class="page-hero-breadcrumb" aria-label="Breadcrumb" style="margin-bottom:16px;">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span aria-current="page">Apply Now</span>
+          </nav>
+          <div class="eyebrow">Start Your Application</div>
+          <h1>Schedule Your<br />Discovery Call</h1>
+          <p>Tell us about your practice and goals. Dr. Robinson's team will review your application and reach out within 2–3 business days to schedule your personalized discovery call.</p>
+        </div>
+
+        <!-- Success State -->
+        <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <h2>Application Received</h2>
+          <p>Thank you for your interest. Dr. Robinson's team will be in touch within 2–3 business days to schedule your discovery call.</p>
+          <a href="process.html" class="btn btn-primary btn-lg" style="margin-top:8px;">Learn How It Works</a>
+        </div>
+
+        <!-- Application Form -->
+        <form class="apply-form" id="applyForm" novalidate aria-label="Provider application">
+
+          <!-- Name row -->
+          <div class="form-row">
+            <div class="form-field">
+              <label for="firstName">First Name <span class="req">*</span></label>
+              <input type="text" id="firstName" name="firstName" autocomplete="given-name" placeholder="Jane" required />
+              <span class="field-error" id="firstNameError">Please enter your first name.</span>
+            </div>
+            <div class="form-field">
+              <label for="lastName">Last Name <span class="req">*</span></label>
+              <input type="text" id="lastName" name="lastName" autocomplete="family-name" placeholder="Smith" required />
+              <span class="field-error" id="lastNameError">Please enter your last name.</span>
+            </div>
+          </div>
+
+          <!-- Credentials -->
+          <div class="form-field">
+            <label for="credentials">Credentials / Degree <span class="req">*</span></label>
+            <input type="text" id="credentials" name="credentials" placeholder="e.g. DDS, DMD, MD, DO, NP" required />
+            <span class="field-error" id="credentialsError">Please enter your credentials.</span>
+          </div>
+
+          <!-- Contact row -->
+          <div class="form-row">
+            <div class="form-field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="jane@yourpractice.com" required />
+              <span class="field-error" id="emailError">Please enter a valid email address.</span>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(555) 000-0000" required />
+              <span class="field-error" id="phoneError">Please enter your phone number.</span>
+            </div>
+          </div>
+
+          <!-- Practice info row -->
+          <div class="form-row">
+            <div class="form-field">
+              <label for="practiceName">Practice Name</label>
+              <input type="text" id="practiceName" name="practiceName" placeholder="Your Practice Name" />
+            </div>
+            <div class="form-field">
+              <label for="location">City &amp; State <span class="req">*</span></label>
+              <input type="text" id="location" name="location" placeholder="e.g. Austin, TX" required />
+              <span class="field-error" id="locationError">Please enter your city and state.</span>
+            </div>
+          </div>
+
+          <!-- Specialty -->
+          <div class="form-field">
+            <label for="specialty">Primary Specialty <span class="req">*</span></label>
+            <select id="specialty" name="specialty" required>
+              <option value="" disabled selected>Select your specialty…</option>
+              <option value="general-dentistry">General Dentistry</option>
+              <option value="orthodontics">Orthodontics</option>
+              <option value="oral-surgery">Oral &amp; Maxillofacial Surgery</option>
+              <option value="pediatric-dentistry">Pediatric Dentistry</option>
+              <option value="dental-sleep-medicine">Dental Sleep Medicine</option>
+              <option value="tmj-orofacial-pain">TMJ / Orofacial Pain</option>
+              <option value="sleep-medicine-md">Sleep Medicine (MD/DO)</option>
+              <option value="ent">ENT / Otolaryngology</option>
+              <option value="primary-care">Primary Care (MD/DO/NP/PA)</option>
+              <option value="speech-language-pathology">Speech-Language Pathology</option>
+              <option value="physical-therapy">Physical Therapy / Chiropractic</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="field-error" id="specialtyError">Please select your specialty.</span>
+          </div>
+
+          <!-- Brand Interest -->
+          <div class="form-field">
+            <label>Brand Interest <span class="req">*</span></label>
+            <div class="checkbox-group" role="group" aria-label="Select brand interest">
+              <label class="checkbox-item">
+                <input type="checkbox" name="brand" value="PSC" id="brandPSC" />
+                <span><strong>Pain &amp; Sleep Therapy Center (PSC)</strong>TMJ, craniofacial pain &amp; dental sleep medicine</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="brand" value="AFD" id="brandAFD" />
+                <span><strong>Center for Airway &amp; Facial Development (AFD)</strong>Pediatric airway, myofunctional therapy &amp; early intervention</span>
+              </label>
+            </div>
+            <span class="field-error" id="brandError">Please select at least one brand.</span>
+          </div>
+
+          <!-- Agreement Tier -->
+          <div class="form-field">
+            <label for="tier">Agreement Tier Interest <span class="req">*</span></label>
+            <select id="tier" name="tier" required>
+              <option value="" disabled selected>Select your tier interest…</option>
+              <option value="licensure-only">Licensure Agreement Only (Tier 1)</option>
+              <option value="licensure-msa">Licensure + MSA (Full Partnership, Tier 2)</option>
+              <option value="unsure">Unsure — I'd like to discuss during the call</option>
+            </select>
+            <span class="field-error" id="tierError">Please select your tier interest.</span>
+          </div>
+
+          <!-- Tell us about yourself -->
+          <div class="form-field">
+            <label for="about">Tell Us About Your Practice &amp; Goals</label>
+            <textarea id="about" name="about" placeholder="Share your current practice setup, patient volume, what draws you to airway-focused care, and what you're hoping to build — the more detail, the better we can prepare for your discovery call."></textarea>
+          </div>
+
+          <!-- Consent -->
+          <div class="consent-row">
+            <label class="checkbox-item">
+              <input type="checkbox" id="consent" name="consent" required />
+              <span>I understand this is an inquiry for a healthcare provider licensing program and consent to being contacted by the PSC &amp; AFD licensing team via phone or email. <span class="req">*</span></span>
+            </label>
+            <span class="field-error" id="consentError">Please confirm your consent to proceed.</span>
+          </div>
+
+          <!-- Submit -->
+          <div class="form-submit-row">
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <span>Submit Application</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <p class="form-note">We typically respond within 2–3 business days. Your information is kept strictly confidential and used only for licensing inquiries.</p>
+          </div>
+
+        </form>
+
+      </section>
+
+    </div>
+    <!-- end apply-layout -->
+
+    <!-- Social proof strip -->
+    <section class="stats-bar" aria-label="Program quick facts" style="background:var(--green);">
+      <div class="container">
+        <div class="stats-bar-inner">
+          <div class="stat-item">
+            <span class="stat-number">2</span>
+            <span class="stat-label">Licensed Brands</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Years Clinical Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">60–90</span>
+            <span class="stat-label">Day Onboarding</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Clinical Independence</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-name">Pain &amp; Sleep Therapy Center</div>
+          <div class="footer-brand-sub">&amp; Center for Airway &amp; Facial Development</div>
+          <p class="footer-brand-desc">Expanding access to root-cause, airway-focused care — one licensed provider at a time.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Pages</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="brands.html">Our Brands</a></li>
+            <li><a href="pricing.html">Pricing &amp; Agreement</a></li>
+            <li><a href="leadership.html">Leadership Team</a></li>
+            <li><a href="process.html">How It Works</a></li>
+            <li><a href="apply.html">Apply Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Our Sites</h5>
+          <ul>
+            <li class="footer-site-link"><a href="https://painandsleepcenter.com" target="_blank" rel="noopener">painandsleepcenter.com</a><span>Newark, DE &amp; Bryn Mawr, PA</span></li>
+            <li class="footer-site-link"><a href="https://pscmainline.com" target="_blank" rel="noopener">pscmainline.com</a><span>Bryn Mawr, PA</span></li>
+            <li class="footer-site-link"><a href="https://airwayandfacialdevelopment.com" target="_blank" rel="noopener">airwayandfacialdevelopment.com</a><span>Newark, DE</span></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-contact">
+          <h5>Licensing Inquiries</h5>
+          <p><strong>(302) 239-1757</strong></p>
+          <p><strong>licensing@painandsleepcenter.com</strong></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pain &amp; Sleep Therapy Center / Center for Airway &amp; Facial Development. All rights reserved.</p>
+        <p class="footer-disclaimer">For healthcare provider licensing inquiries only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
