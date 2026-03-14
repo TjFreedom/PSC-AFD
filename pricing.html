@@ -231,6 +231,125 @@
       </div>
     </section>
 
+    <!-- ROI Calculator -->
+    <section class="roi-section" aria-labelledby="roi-heading">
+      <div class="container">
+        <div class="section-heading section-heading--center reveal">
+          <div class="eyebrow">Revenue Estimator</div>
+          <h2 class="display-md" id="roi-heading">What Could Licensing<br /><em>Actually Be Worth?</em></h2>
+          <p>Adjust the inputs below to model the financial impact for your specific practice. Numbers are illustrative — your discovery call will get into specifics.</p>
+        </div>
+        <div class="roi-card reveal">
+          <div class="roi-grid">
+            <div class="roi-inputs">
+              <div class="roi-input-group">
+                <label class="roi-input-label" for="roiPatients">New patients / month</label>
+                <span class="roi-range-val" id="roiPatientsVal">80 pts</span>
+                <input type="range" class="roi-range" id="roiPatients" min="10" max="300" step="5" value="80" />
+              </div>
+              <div class="roi-input-group">
+                <label class="roi-input-label" for="roiCase">Average case value</label>
+                <span class="roi-range-val" id="roiCaseVal">$4,500 USD</span>
+                <input type="range" class="roi-range" id="roiCase" min="1000" max="15000" step="250" value="4500" />
+              </div>
+              <div class="roi-input-group">
+                <label class="roi-input-label" for="roiAccept">Case acceptance rate</label>
+                <span class="roi-range-val" id="roiAcceptVal">55%</span>
+                <input type="range" class="roi-range" id="roiAccept" min="20" max="90" step="5" value="55" />
+              </div>
+            </div>
+            <div class="roi-results" aria-live="polite">
+              <div class="roi-result-row">
+                <span class="roi-result-label">Projected annual revenue</span>
+                <span class="roi-result-val" id="roiRevenue">$23,760,000</span>
+              </div>
+              <div class="roi-result-row">
+                <span class="roi-result-label">Brand license fee (3%)</span>
+                <span class="roi-result-val" id="roiFee">—</span>
+              </div>
+              <div class="roi-result-row">
+                <span class="roi-result-label">Mktg savings vs. agency</span>
+                <span class="roi-result-val" id="roiSavings">—</span>
+              </div>
+              <div class="roi-result-row">
+                <span class="roi-result-label roi-result-label--bold">Net annual benefit</span>
+                <span class="roi-result-val roi-result-val--highlight" id="roiNet">—</span>
+              </div>
+              <div class="roi-result-row">
+                <span class="roi-result-label">Estimated setup ROI</span>
+                <span class="roi-result-val" id="roiROI">—</span>
+              </div>
+              <p class="roi-disclaimer">Illustrative model only. Actual results vary by market, specialty, and execution. Does not constitute financial advice. Consult with PSC on your specific situation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="compare-section" aria-labelledby="compare-heading">
+      <div class="container">
+        <div class="section-heading section-heading--center reveal">
+          <div class="eyebrow">Competitive Landscape</div>
+          <h2 class="display-md" id="compare-heading">How PSC Licensing Compares<br />to <em>Your Alternatives</em></h2>
+          <p>There are several ways to grow a specialty practice. Here's an honest look at the tradeoffs.</p>
+        </div>
+        <div class="compare-table-wrap reveal">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Growth Path</th>
+                <th>Time to Market</th>
+                <th>Brand Equity</th>
+                <th>Clinical Autonomy</th>
+                <th>Marketing Included</th>
+                <th>Coaching &amp; Support</th>
+                <th>Vendor Discounts</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Build your own brand from scratch</td>
+                <td>5–10 years</td>
+                <td><span class="cmp-partial">Slow-build</span></td>
+                <td><span class="cmp-yes">✓</span> Full</td>
+                <td><span class="cmp-no">—</span></td>
+                <td><span class="cmp-no">—</span></td>
+                <td><span class="cmp-no">—</span></td>
+              </tr>
+              <tr>
+                <td>Join a traditional dental franchise</td>
+                <td>3–6 months</td>
+                <td><span class="cmp-yes">✓</span> Immediate</td>
+                <td><span class="cmp-no">—</span> Limited</td>
+                <td><span class="cmp-partial">Varies</span></td>
+                <td><span class="cmp-yes">✓</span></td>
+                <td><span class="cmp-partial">Partial</span></td>
+              </tr>
+              <tr>
+                <td>Hire a marketing agency independently</td>
+                <td>Ongoing</td>
+                <td><span class="cmp-no">—</span></td>
+                <td><span class="cmp-yes">✓</span> Full</td>
+                <td><span class="cmp-partial">Partial</span></td>
+                <td><span class="cmp-no">—</span></td>
+                <td><span class="cmp-no">—</span></td>
+              </tr>
+              <tr class="row-psc">
+                <td>License PSC / AFD brands</td>
+                <td>60–90 days</td>
+                <td class="col-psc"><span class="cmp-yes">✓</span> Immediate</td>
+                <td class="col-psc"><span class="cmp-yes">✓</span> Full</td>
+                <td class="col-psc"><span class="cmp-yes">✓</span> Included</td>
+                <td class="col-psc"><span class="cmp-yes">✓</span> Included</td>
+                <td class="col-psc"><span class="cmp-yes">✓</span> Included</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     <!-- Why Value Section -->
     <section class="gradient-section" aria-label="Value proposition">
       <div class="container">

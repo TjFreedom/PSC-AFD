@@ -337,6 +337,58 @@
     });
   })();
 
+  /* ── ROI Calculator ──────────────────────────────────────── */
+  (function initROICalc() {
+    var patientsEl = document.getElementById('roiPatients');
+    var caseEl     = document.getElementById('roiCase');
+    var acceptEl   = document.getElementById('roiAccept');
+    if (!patientsEl || !caseEl || !acceptEl) return;
+
+    var patientsValEl = document.getElementById('roiPatientsVal');
+    var caseValEl     = document.getElementById('roiCaseVal');
+    var acceptValEl   = document.getElementById('roiAcceptVal');
+    var revenueEl     = document.getElementById('roiRevenue');
+    var feeEl         = document.getElementById('roiFee');
+    var savingsEl     = document.getElementById('roiSavings');
+    var netEl         = document.getElementById('roiNet');
+    var roiEl         = document.getElementById('roiROI');
+
+    function fmt(n) {
+      return '$' + Math.round(n).toLocaleString('en-US');
+    }
+
+    function calc() {
+      var patients  = parseInt(patientsEl.value, 10);
+      var avgCase   = parseInt(caseEl.value, 10);
+      var accept    = parseInt(acceptEl.value, 10);
+
+      if (patientsValEl) patientsValEl.textContent = patients + ' pts';
+      if (caseValEl)     caseValEl.textContent     = fmt(avgCase) + ' USD';
+      if (acceptValEl)   acceptValEl.textContent   = accept + '%';
+
+      var annual     = patients * avgCase * (accept / 100) * 12;
+      var licenseFee = annual * 0.03;
+      var mktgSave   = 7200 * 12 * 0.6;
+      var net        = annual - licenseFee + mktgSave;
+      var roi        = licenseFee > 0 ? Math.round(((net - 25000) / 25000) * 100) : 0;
+
+      if (revenueEl) revenueEl.textContent = fmt(annual);
+      if (feeEl)     feeEl.textContent     = '−' + fmt(licenseFee);
+      if (savingsEl) savingsEl.textContent = '+' + fmt(mktgSave);
+      if (netEl)     netEl.textContent     = fmt(net);
+
+      if (roiEl) {
+        roiEl.textContent = (roi > 0 ? '+' : '') + roi + '%';
+        roiEl.className = 'roi-result-val ' + (roi >= 0 ? 'roi-result-val--pos' : 'roi-result-val--neg');
+      }
+    }
+
+    patientsEl.addEventListener('input', calc);
+    caseEl.addEventListener('input', calc);
+    acceptEl.addEventListener('input', calc);
+    calc(); // initialise on load
+  })();
+
   /* ── Marquee Pause on Hover ───────────────────────────────── */
   (function initMarquee() {
     var marquee = document.querySelector('.marquee-track');
